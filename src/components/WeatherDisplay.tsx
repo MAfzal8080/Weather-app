@@ -19,7 +19,7 @@ export const WeatherDisplay: React.FC = () => {
     const d = new Date();
     const day = weekday[d.getDay()];
     const now = new Date();
-    const hours = now.getHours();
+    const hours = now.getHours() == 0 ? 12 : now.getHours();
     const hr = hours > 12 ? hours-12 : hours;
     const minutes = now.getMinutes();
     const ab = hours >= 12 ? "PM" : "AM";
