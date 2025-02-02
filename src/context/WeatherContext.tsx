@@ -41,14 +41,6 @@ export const WeatherProvider: React.FC<{ children: React.ReactNode }> = ({ child
     setIsCelsius(prev => !prev);
   }, []);
 
-  // Load last searched city on mount
-  useEffect(() => {
-    const lastCity = localStorage.getItem('lastCity');
-    if (lastCity) {
-      searchCity(lastCity);
-    }
-  }, [searchCity]);
-
   // Polling every 30 seconds
   useEffect(() => {
     if (!weatherData?.name) return;

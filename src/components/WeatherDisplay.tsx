@@ -37,8 +37,8 @@ export const WeatherDisplay: React.FC = () => {
   return (
     <div className="bg-cyan-500/30 backdrop-blur-sm rounded-lg shadow-lg p-6 w-full">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-bold text-white">{weatherData.name}</h2>
-        <span className='text-2xl font-bold text-white'>{time.hour}:{time.min} {time.am}</span>
+        <h2 className="text-2xl font-bold text-gray-600">{weatherData.name}</h2>
+        <span className='text-2xl font-bold text-gray-600'>{time.hour}:{time.min} {time.am}</span>
         <button
           onClick={toggleUnit}
           className="px-3 py-1 text-sm bg-blue-100 text-blue-600 rounded-md hover:bg-blue-200"
@@ -55,11 +55,11 @@ export const WeatherDisplay: React.FC = () => {
       </div>
 
       <div className="text-center mb-6">
-        <h1 className="text-4xl font-bold text-gray-200">
+        <h1 className="text-4xl font-bold text-gray-600">
           {Math.round(temp/10)}°{isCelsius ? 'C' : 'F'}
         </h1>
-        <p className="text-gray-200 capitalize">{weatherData.weather[0].description}</p>
-        <p className='text-gray-200 capitalize'>{time.day}</p>
+        <p className="text-gray-600 capitalize">{weatherData.weather[0].description}</p>
+        <p className='text-gray-600 capitalize'>{time.day}</p>
       </div>
 
       <div className="grid grid-cols-3 gap-4">
@@ -83,7 +83,7 @@ export const WeatherDisplay: React.FC = () => {
       </div>
 
       <div className="bg-white rounded-lg shadow-lg p-6 mt-6">
-        <h3 className="text-xl font-semibold text-gray-800 mb-4">5-Day Forecast</h3>
+        <h3 className="text-xl font-bold text-gray-600 mb-4">5-Day Forecast</h3>
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
           {forecastData.map((day, index) => (
             <div key={index} className="bg-gray-50 rounded-lg p-4 text-center">

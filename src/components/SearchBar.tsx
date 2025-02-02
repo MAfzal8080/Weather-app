@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Search } from 'lucide-react';
 import { useWeather } from '../context/WeatherContext';
 
 export const SearchBar: React.FC = () => {
   const [city, setCity] = useState('');
+  // const [recurring, setRecurring] = useState('')
   const { searchCity } = useWeather();
+
+  useEffect(() => {
+      const lastCity = localStorage.getItem('lastCity');
+      if (lastCity) {
+        searchCity(lastCity);
+      } else {
+        searchCity("Delhi")
+      }
+    }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
